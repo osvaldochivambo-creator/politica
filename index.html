@@ -1,160 +1,289 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exie — Mobile & Web App Development South Africa</title>
 
-<title>Política de Privacidade - GoMoz</title>
+  <!-- SEO Localisation -->
+  <meta name="description" content="Exie builds high‑performance Android, iOS and Web systems in South Africa. Launch your app in weeks with secure cloud infrastructure.">
+  <meta name="keywords" content="App development South Africa, Android apps, iOS apps, business systems, SaaS development">
 
-<style>
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 900px;
-  margin:auto;
-  padding:20px;
-  line-height:1.6;
-  background:#ffffff;
-  color:#222;
-}
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-h1{
-  text-align:center;
-}
+  <style>
+    :root {
+      --bg-dark: #0b0f14;
+      --bg-card: #111822;
+      --primary: #2e7df6;
+      --primary-light: #4da3ff;
+      --text: #ffffff;
+      --text-muted: #9aa4b2;
+      --border: rgba(255,255,255,0.08);
+    }
 
-h2{
-  margin-top:30px;
-  color:#111;
-}
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
 
-footer{
-  margin-top:40px;
-  padding-top:20px;
-  border-top:1px solid #ccc;
-  text-align:center;
-  font-size:14px;
-}
-</style>
+    body { background:var(--bg-dark); color:var(--text); line-height:1.6; }
+
+    img { max-width:100%; height:auto; display:block; }
+
+    a { text-decoration:none; color:inherit; }
+
+    .container { width:90%; max-width:1100px; margin:auto; }
+
+    header {
+      position:sticky; top:0;
+      background:rgba(11,15,20,0.85);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+      z-index:100;
+    }
+
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
+
+    .logo img { height:42px; }
+
+    .nav-links a { margin-left:20px; color:var(--text-muted); font-weight:500; }
+
+    .btn {
+      background:linear-gradient(135deg,var(--primary),var(--primary-light));
+      padding:12px 22px;
+      border-radius:8px;
+      font-weight:600;
+      display:inline-block;
+      margin-top:20px;
+      color:white;
+    }
+
+    .hero { padding:110px 0 90px; text-align:center; }
+
+    .hero h1 { font-size:2.8rem; max-width:820px; margin:auto; }
+
+    .hero p { color:var(--text-muted); margin-top:20px; font-size:1.1rem; max-width:650px; margin-inline:auto; }
+
+    section { padding:80px 0; }
+
+    .section-title { text-align:center; font-size:2rem; margin-bottom:45px; }
+
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
+
+    .card {
+      background:var(--bg-card);
+      padding:28px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      transition:.3s ease;
+    }
+
+    .card:hover { transform:translateY(-6px); border-color:rgba(77,163,255,.4); }
+
+    .card p { color:var(--text-muted); font-size:.95rem; }
+
+    .portfolio img {
+      border-radius:12px;
+      border:1px solid var(--border);
+      margin-bottom:15px;
+    }
+
+    .price { font-size:2rem; margin:15px 0; color:var(--primary-light); }
+
+    form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:15px; }
+
+    input, textarea {
+      padding:12px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:#0f141b;
+      color:white;
+    }
+
+    footer {
+      border-top:1px solid var(--border);
+      padding:30px 0;
+      text-align:center;
+      color:var(--text-muted);
+      font-size:.9rem;
+    }
+
+    @media(max-width:768px){
+      .hero h1{font-size:2rem}
+      nav{flex-direction:column;gap:10px}
+    }
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position:fixed;
+      bottom:22px;
+      right:22px;
+      background:#25D366;
+      color:white;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.35);
+      z-index:999;
+      transition:.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform:scale(1.08);
+      box-shadow:0 10px 25px rgba(37,211,102,.5);
+    }
+
+  </style>
 </head>
-
 <body>
 
-<h1>Política de Privacidade</h1>
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="https://tfhamvidbqslhknwcimu.supabase.co/storage/v1/object/sign/exie/Logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV84NDkxNGRhYi05ZDc1LTQ2MGEtYWE2Ni01Y2EwZjIxYzQ2ZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJleGllL0xvZ28ucG5nIiwiaWF0IjoxNzc0ODAxMjEwLCJleHAiOjE1Nzg1NzQ4MDEyMTB9.Cp9xeXqfQdUveHwDRmgbvZUsoJvcM0hKdgOPYI0Qu08" alt="Exie Logo" loading="eager">
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">How We Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-<p><strong>GoMoz</strong><br>
-Última atualização: 01 de Janeiro de 2026</p>
+<section class="hero container">
+  <h1>High‑Performance Mobile & Web Systems Built for South African Businesses</h1>
+  <p>
+    We design scalable Android, iOS and web platforms delivered in weeks — not months.
+    Secure infrastructure, modern architecture and full technical management included.
+  </p>
+  <a href="#contact" class="btn">Request a Quote</a>
+</section>
 
-<h2>1. Introdução</h2>
-<p>
-A presente Política de Privacidade descreve como a GoMoz recolhe,
-utiliza, armazena e protege os dados pessoais dos utilizadores da sua
-aplicação móvel de delivery e serviços associados.
-</p>
+<section id="services" class="container">
+  <h2 class="section-title">Our Services</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Android & iOS Apps</h3>
+      <p>Modern mobile applications designed for performance, scalability and business growth.</p>
+    </div>
+    <div class="card">
+      <h3>Business Management Systems</h3>
+      <p>Custom dashboards and admin panels to control operations, users and data in real time.</p>
+    </div>
+    <div class="card">
+      <h3>Secure Cloud Infrastructure</h3>
+      <p>Encrypted databases, automated backups and enterprise‑level reliability aligned with POPIA standards.</p>
+    </div>
+  </div>
+</section>
 
-<p>
-A GoMoz atua como vendedora direta ao cliente final, adquirindo produtos
-junto de restaurantes parceiros e revendendo-os aos utilizadores.
-</p>
+<section id="portfolio" class="container portfolio">
+  <h2 class="section-title">Selected Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://tfhamvidbqslhknwcimu.supabase.co/storage/v1/object/sign/exie/Delivery.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV84NDkxNGRhYi05ZDc1LTQ2MGEtYWE2Ni01Y2EwZjIxYzQ2ZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJleGllL0RlbGl2ZXJ5LnBuZyIsImlhdCI6MTc3NDgwMTE1NywiZXhwIjoxNTc4NTc0ODAxMTU3fQ.UBYzm9GVT8ksDCe0oYpqdUiG18oyEJnH_v54VI6Weto" loading="lazy" alt="Delivery App">
+      <h3>Delivery Platform</h3>
+      <p>Complete ordering ecosystem with real‑time tracking, payments and operational dashboards.</p>
+    </div>
 
-<h2>2. Responsável pelo Tratamento dos Dados</h2>
+    <div class="card">
+      <img src="https://tfhamvidbqslhknwcimu.supabase.co/storage/v1/object/sign/exie/Logistica.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV84NDkxNGRhYi05ZDc1LTQ2MGEtYWE2Ni01Y2EwZjIxYzQ2ZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJleGllL0xvZ2lzdGljYS5wbmciLCJpYXQiOjE3NzQ4MDExODIsImV4cCI6MTU3ODU3NDgwMTE4Mn0.8k49dhspRzpM7oWTvCAW5as5O8SXHqURflLdxxki2WY" loading="lazy" alt="Logistics System">
+      <h3>Logistics Management</h3>
+      <p>Fleet and operations system enabling route control, analytics and live monitoring.</p>
+    </div>
 
-<p>
-GoMoz<br>
-Endereço: Av. Milagre Mabote, No. 162<br>
-Telefone: +258 851989515<br>
-Email: info@gomoz.net
-</p>
+    <div class="card">
+      <img src="https://tfhamvidbqslhknwcimu.supabase.co/storage/v1/object/sign/exie/Personal%20financial%20managment.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV84NDkxNGRhYi05ZDc1LTQ2MGEtYWE2Ni01Y2EwZjIxYzQ2ZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJleGllL1BlcnNvbmFsIGZpbmFuY2lhbCBtYW5hZ21lbnQucG5nIiwiaWF0IjoxNzc0ODAxMjMyLCJleHAiOjE1OTQ1NDgwMTIzMn0.oIMcGv8L8HUqlcM_vMBo2eV4EkBQ6wLbHlda4Yyq7BI" loading="lazy" alt="Finance App">
+      <h3>Personal Finance Manager</h3>
+      <p>Financial tracking application with analytics, budgeting tools and secure data storage.</p>
+    </div>
+  </div>
+</section>
 
-<h2>3. Dados Pessoais Recolhidos</h2>
+<section id="process" class="container">
+  <h2 class="section-title">How We Work</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Native‑Level Performance</h3>
+      <p>Optimised architecture ensuring fast interfaces, smooth animations and scalability.</p>
+    </div>
+    <div class="card">
+      <h3>Data & Security First</h3>
+      <p>Dedicated backend infrastructure with encrypted storage and compliance‑ready standards.</p>
+    </div>
+    <div class="card">
+      <h3>Managed Software</h3>
+      <p>We handle servers, updates and stability while your business focuses on growth.</p>
+    </div>
+  </div>
+</section>
 
-<ul>
-<li>Nome</li>
-<li>Número de telefone</li>
-<li>Email (quando fornecido)</li>
-<li>Endereço de entrega</li>
-<li>Localização autorizada pelo utilizador</li>
-<li>Histórico de pedidos</li>
-<li>Endereço IP e dados técnicos do dispositivo</li>
-</ul>
+<section id="pricing" class="container">
+  <h2 class="section-title">Pricing</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Start</h3>
+      <p>Perfect for MVPs and early startups.</p>
+      <div class="price">From R8,000</div>
+      <p>Core mobile app + secure backend.</p>
+      <p style="margin-top:12px;color:var(--text-muted);">
+        Monthly App Maintenance — <strong>R500/month</strong><br>
+        File Hosting up to 5GB — <strong>R1000/month</strong>
+      </p>
+    </div>
 
-<h2>4. Dados que Não São Recolhidos</h2>
+    <div class="card">
+      <h3>Business</h3>
+      <p>For growing companies.</p>
+      <div class="price">From R15,000</div>
+      <p>Advanced features, dashboards and integrations.</p>
+      <p style="margin-top:12px;color:var(--text-muted);">
+        Monthly App Maintenance — <strong>R500/month</strong><br>
+        File Hosting up to 5GB — <strong>R1000/month</strong>
+      </p>
+    </div>
 
-<ul>
-<li>Não recolhemos dados bancários</li>
-<li>Não processamos cartões de crédito ou débito</li>
-<li>Não armazenamos informações financeiras</li>
-</ul>
+    <div class="card">
+      <h3>Enterprise</h3>
+      <p>Custom enterprise solutions.</p>
+      <div class="price">From R25,000</div>
+      <p>Dedicated infrastructure and priority support.</p>
+      <p style="margin-top:12px;color:var(--text-muted);">
+        Monthly App Maintenance — <strong>R500/month</strong><br>
+        File Hosting up to 5GB — <strong>R1000/month</strong>
+      </p>
+    </div>
+  </div>
+</section>
 
-<h2>5. Finalidade do Tratamento</h2>
-
-<ul>
-<li>Gestão da conta do utilizador</li>
-<li>Processamento de pedidos</li>
-<li>Coordenação de entregas</li>
-<li>Melhoria do serviço</li>
-<li>Prevenção de fraude</li>
-<li>Cumprimento legal</li>
-</ul>
-
-<h2>6. Partilha de Dados</h2>
-
-<p>
-Os dados são partilhados apenas quando necessário com estafetas para
-realização da entrega e com fornecedores tecnológicos como serviços de
-backend (ex: Supabase).
-</p>
-
-<h2>7. Base Legal</h2>
-
-<ul>
-<li>Execução contratual</li>
-<li>Consentimento do utilizador</li>
-<li>Obrigação legal</li>
-<li>Interesse legítimo da plataforma</li>
-</ul>
-
-<h2>8. Conservação dos Dados</h2>
-
-<p>
-Os dados são mantidos enquanto a conta estiver ativa ou conforme
-exigido por legislação aplicável.
-</p>
-
-<h2>9. Segurança</h2>
-
-<p>
-A GoMoz aplica medidas técnicas e organizativas adequadas para proteger
-os dados pessoais contra acessos não autorizados.
-</p>
-
-<h2>10. Direitos dos Utilizadores</h2>
-
-<ul>
-<li>Acesso aos dados</li>
-<li>Correção de informações</li>
-<li>Eliminação da conta</li>
-<li>Retirada de consentimento</li>
-</ul>
-
-<p>Pedidos: info@gomoz.net</p>
-
-<h2>11. Dados de Menores</h2>
-<p>A aplicação não é destinada a menores de 18 anos.</p>
-
-<h2>12. Transferência Internacional</h2>
-<p>
-Os dados podem ser armazenados em servidores fora de Moçambique com
-níveis adequados de proteção.
-</p>
-
-<h2>13. Alterações</h2>
-<p>
-A GoMoz pode atualizar esta Política de Privacidade a qualquer momento,
-sendo as alterações publicadas nesta página.
-</p>
+<section id="contact" class="container">
+  <h2 class="section-title">Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <textarea rows="4" placeholder="Tell us about your project"></textarea>
+    <button class="btn" type="submit">Send Request</button>
+  </form>
+  <p style="text-align:center;margin-top:20px;color:var(--text-muted);">
+    Global Remote Service • Southern Africa Based • exie.co.za<br>
+    Email: <a href="mailto:info@exie.co.za">info@exie.co.za</a> • WhatsApp: <a href="https://wa.me/27710272100" target="_blank">+27 71 027 2100</a>
+  </p>
+</section>
 
 <footer>
-© 2026 GoMoz — Todos os direitos reservados
+  © 2026 Exie — Mobile & Web Systems • South Africa
 </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/27710272100" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    💬
+  </a>
 
 </body>
 </html>
